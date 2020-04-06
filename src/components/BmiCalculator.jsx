@@ -45,6 +45,18 @@ const BmiCalculator = () => {
     }
   }
 
+  const resetData = e => {
+    e.preventDefault();
+    setUnit("Metric");
+    setCount({
+      heightCount: "0",
+      inchesCount: "0",
+      weightCount: "0"
+    })
+    setHeightUnit('cm');
+    setWeightUnit('kg');
+  }
+
 
   return (
     <Fragment>
@@ -90,7 +102,7 @@ const BmiCalculator = () => {
             onChange={onChangeInput}
           />
         </div>
-        <button className="button" type="submit">Reset</button>
+        <button className="button" type="submit" onClick={resetData}>Reset</button>
       </div>
     </Fragment>
   )
