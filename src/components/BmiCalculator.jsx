@@ -15,8 +15,8 @@ const BmiCalculator = () => {
   const { heightCount, inchesCount, weightCount } = count;
 
   useEffect(() => {
-
-  }, []);
+    metricBMI(heightCount, weightCount)
+  }, [heightCount, weightCount]);
 
   // useEffect(() => {
   //   if (unit === "") {
@@ -42,6 +42,13 @@ const BmiCalculator = () => {
     } else {
       setHeightUnit('ft');
       setWeightUnit('lbs');
+    }
+  }
+
+  const metricBMI = (height, weight) => {
+    if (height > 0 && weight > 0) {
+      const bmi = weight / Math.pow(height, 2);
+      console.log(bmi)
     }
   }
 
