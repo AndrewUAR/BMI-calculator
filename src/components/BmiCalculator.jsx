@@ -28,7 +28,10 @@ const BmiCalculator = () => {
 
   const onChangeInput = e => {
     const { name, value } = e.target;
-    setCount({ name : value});
+    setCount(prevState => ({
+      ...prevState, 
+      [name] : value
+    }));
   }
 
   const onSelectTag = (e) => {
